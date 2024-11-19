@@ -1,0 +1,45 @@
+#btn-começar {
+  width: 260px;
+  height: 60px;
+  font-size: 22px;
+  align-items: center;
+  margin-top: -33px;
+  position: absolute;
+  margin-left: -138px;
+}
+
+#img-vini {
+  height: 300px;
+  width: 300px;
+}
+
+#img-cerebro {
+  width: 40px;
+  height: 40px;
+}
+
+.titulo {
+  padding: 10px;
+  margin-top: -100px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 45px;
+}
+
+h3 {
+  margin-top: -3px;
+  color: #575db3;
+}
+
+span {
+  font-size: 15px;
+  color: #d6a70d;
+}
+
+p {
+  margin-left: 200px;
+  margin-top: -20px;
+  font-size: 12px;
+}

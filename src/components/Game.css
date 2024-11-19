@@ -1,0 +1,207 @@
+.ocultar {
+  display: none;
+}
+
+.principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+.container-game {
+  display: grid;
+  grid-template-columns: repeat(6, 130px);
+  gap: 17px;
+}
+
+/* cartas */
+
+.carta {
+  height: 180px;
+  width: 120px;
+  border-radius: 2px;
+  background: #000;
+  cursor: pointer;
+  background: none;
+  outline: none;
+  animation: slideInLeft 0.9s ease-in-out;
+}
+
+.carta.virada .inner {
+  transform: rotateY(180deg);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.carta .atras,
+.carta .frente {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.carta .frente {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carta .atras {
+  background: #fafafa;
+
+  font-size: 100px;
+  transition: 0.3s ease all;
+}
+
+.carta .atras:hover {
+  background: #575db3;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* fim cartas */
+
+/* header */
+.header {
+  margin-top: 261px;
+  margin-left: -300px;
+  position: absolute;
+  flex-wrap: wrap;
+  width: 180px;
+  gap: 10px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./jogadores/placar2.svg");
+  animation: flip 0.5s ease-in-out;
+}
+
+.texto1,
+.texto3 {
+  font-size: 20px;
+  margin-top: 2px;
+  margin-left: -10px;
+  color: #333;
+  display: flex;
+  padding: 27px;
+  width: 100%;
+}
+
+/* fim header */
+
+.playerAtual {
+  font-size: 17px;
+  position: absolute;
+  margin-top: -66px;
+  margin-left: 246px;
+
+  padding: -10px;
+  height: 50px;
+  width: 360px;
+}
+
+/* beligol */
+
+#beligolImg {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  display: flex;
+  margin-top: -368px;
+  margin-left: 149px;
+  z-index: -9999;
+}
+
+#btn-embaralhar {
+  width: 260px;
+  height: 60px;
+  font-size: 22px;
+  margin-left: 104px;
+  margin-top: 50px;
+  position: absolute;
+}
+
+/* container embaralhar */
+
+.container-embaralhar {
+  width: 400px;
+  height: 400px;
+  margin-top: 400px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* div botoes de reiniciar e menu principal */
+
+.buttonsEnd {
+  position: absolute;
+  justify-content: end;
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-left: 800px;
+  margin-top: 298px;
+  animation: slideInLeft 0.3s ease-in-out;
+}
+
+#btn-menuPrincipal,
+#btnEmbaralhar {
+  width: 250px;
+}
+
+/* keyframes */
+
+@keyframes flip {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
