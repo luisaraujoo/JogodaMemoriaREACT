@@ -1,3 +1,5 @@
+Jogo da memória com tema de Real Madrid feito com React - maior parte da lógica de programaçõa esta em "./components/Game.jsx"
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
