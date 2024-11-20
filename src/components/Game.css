@@ -96,7 +96,7 @@
   height: 200px;
   justify-content: center;
   align-items: center;
-  background-image: url("./jogadores/placar2.svg");
+  /* background-image: url("./jogadores/placar2.svg"); */
   animation: flip 0.5s ease-in-out;
 }
 
@@ -118,7 +118,6 @@
   position: absolute;
   margin-top: -66px;
   margin-left: 246px;
-
   padding: -10px;
   height: 50px;
   width: 360px;

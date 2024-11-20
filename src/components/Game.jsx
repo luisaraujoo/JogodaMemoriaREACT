@@ -1,4 +1,4 @@
-import React, { createElement, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Game.css";
 
 const Game = () => {
@@ -152,7 +152,11 @@ const Game = () => {
   return (
     <div className="principal">
       {/* header */}
-      <div className="ocultar" id="header">
+      <div
+        className="ocultar"
+        id="header"
+        style={{ backgroundImage: "url(/jogadores/placar2.svg)" }}
+      >
         <p className="texto1">Player 1: {jogador1} pontos</p>
         <p className="texto3">Player 2: {jogador2} pontos</p>
       </div>
