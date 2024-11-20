@@ -151,7 +151,7 @@
   width: 400px;
   height: 400px;
   margin-top: 400px;
-  animation: fadeIn 0.4s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 /* div botoes de reiniciar e menu principal */
@@ -204,4 +204,42 @@
   to {
     opacity: 1;
   }
+}
+
+/* container game over */
+.container-gameOver {
+  width: 500px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px #101010;
+  background-color: #303030;
+  position: absolute;
+  flex-wrap: wrap;
+  margin-top: 280px;
+  margin-left: 178px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.buttons-over {
+  margin-top: 40px;
+  display: block;
+}
+
+#btn-jogarNovamente,
+#btn-menuPrincipalOver {
+  width: 200px;
+}
+
+#btn-menuPrincipalOver {
+  margin-left: 13px;
+}
+
+#titulo-vencedor {
+  padding-top: 14px;
+  font-size: 27px;
+}
+
+#titulo-perdedor {
+  font-size: 15px;
+  margin-left: 0px;
 }

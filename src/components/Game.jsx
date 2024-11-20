@@ -13,6 +13,7 @@ const Game = () => {
   const [jogadorAtual, setJogadorAtual] = useState(1);
   const playerVezRef = useRef(null);
   //   states game over
+  const refGameOver = useRef(null);
   const [ganhador, setGanhador] = useState("");
   const [perdedor, setPerdedor] = useState("");
 
@@ -82,7 +83,27 @@ const Game = () => {
       if (
         cartasRandom[primeiroIndex].valor === cartasRandom[segundoIndex].valor
       ) {
-        setParesEncontrados((prev) => [...prev, primeiroIndex, segundoIndex]);
+        setParesEncontrados((prev) => {
+          const novaLista = [...prev, primeiroIndex, segundoIndex];
+          if (novaLista.length === 24) {
+            refGameOver.current.className = "container-gameOver";
+
+            if (novaLista.length === 24) {
+              if (jogador1 > jogador2) {
+                setGanhador("Player 1 é o grande vencedor!!");
+                setPerdedor("Player 2, tente da próxima vez...");
+              } else if (jogador2 > jogador1) {
+                setGanhador("Player 2 é o grande vencedor!!");
+                setPerdedor("Player 1, tente da próxima vez...");
+              } else if (jogador1 === jogador2) {
+                setGanhador("Empate!!");
+                setPerdedor("não vai sair e deixar por isso mesmo né??");
+              }
+            }
+          }
+
+          return novaLista;
+        });
 
         if (jogadorAtual === 1) {
           setJogador1((prev) => prev + 1);
@@ -91,7 +112,6 @@ const Game = () => {
         }
         setTimeout(() => setViradas([]), 1000);
       } else {
-        console.log("par nao encontrado");
         setTimeout(() => {
           setViradas([]);
           alternarJogador();
@@ -99,6 +119,35 @@ const Game = () => {
       }
     }
   }, [viradas, cartasRandom, jogadorAtual]);
+
+  // botoes de end
+  const menuPrincipal = () => {
+    window.location.reload();
+  };
+
+  const resetarJogo = () => {
+    let containerEmbaralhar = document.getElementById("container-embaralhar");
+    let divBtns = document.getElementById("divBtns");
+    let beligol = document.getElementById("beligol");
+    let btnEmbaralhar = document.getElementById("btn-embaralhar");
+    let contVez = document.getElementById("container-vez");
+    let header = document.getElementById("header");
+
+    setCartasRandom([]);
+    setViradas([]);
+    setParesEncontrados([]);
+    setJogador1(0);
+    setJogador2(0);
+    setJogadorAtual(1);
+
+    refGameOver.current.className = "ocultar";
+    header.className = "ocultar";
+    contVez.className = "ocultar";
+    btnEmbaralhar.className = "mostrar";
+    beligol.className = "beligol";
+    divBtns.className = "ocultar";
+    containerEmbaralhar.className = "container-embaralhar";
+  };
 
   return (
     <div className="principal">
@@ -110,7 +159,12 @@ const Game = () => {
       {/* fim header */}
       <div className="container-game">
         <div className="container-embaralhar" id="container-embaralhar">
-          <button id="btn-embaralhar" ref={btnEmbaralhar} onClick={embaralhar}>
+          <button
+            id="btn-embaralhar"
+            className="mostrar"
+            ref={btnEmbaralhar}
+            onClick={embaralhar}
+          >
             Embaralhar cartas
           </button>
           <figure className="beligol" id="beligol">
@@ -140,7 +194,7 @@ const Game = () => {
           );
         })}
         {/* div para vez de cada jogador */}
-        <div className="ocultar" ref={playerVezRef}>
+        <div className="ocultar" ref={playerVezRef} id="container-vez">
           <h4
             id="outPlayer"
             style={{
@@ -161,8 +215,27 @@ const Game = () => {
         </div>
       </div>
       <div className="ocultar" id="divBtns">
-        <button id="btn-menuPrincipal">Menu Pricipal</button>
-        <button id="btnEmbaralhar">Embaralhar cartas</button>
+        <button id="btn-menuPrincipal" onClick={menuPrincipal}>
+          Menu Pricipal
+        </button>
+        <button id="btnEmbaralhar" onClick={resetarJogo}>
+          Embaralhar cartas
+        </button>
+      </div>
+      {/* div game over */}
+      <div ref={refGameOver} className="ocultar">
+        <div className="text-over">
+          <h3 id="titulo-vencedor">{ganhador}</h3>
+          <p id="titulo-perdedor">{perdedor}</p>
+        </div>
+        <div className="buttons-over">
+          <button id="btn-jogarNovamente" onClick={resetarJogo}>
+            Jogar Novamente
+          </button>
+          <button id="btn-menuPrincipalOver" onClick={menuPrincipal}>
+            Menu Principal
+          </button>{" "}
+        </div>
       </div>
     </div>
   );
