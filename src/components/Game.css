@@ -23,7 +23,6 @@
   height: 180px;
   width: 120px;
   border-radius: 2px;
-  background: #000;
   cursor: pointer;
   background: none;
   outline: none;
@@ -68,9 +67,8 @@
 
 .carta .atras {
   background: #fafafa;
-
   font-size: 100px;
-  transition: 0.3s ease all;
+  transition: 0.3 ease all;
 }
 
 .carta .atras:hover {

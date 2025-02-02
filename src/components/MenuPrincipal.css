@@ -1,21 +1,25 @@
-#btn-começar {
-  width: 260px;
-  height: 60px;
-  font-size: 22px;
-  align-items: center;
-  margin-top: -33px;
-  position: absolute;
-  margin-left: -138px;
-}
-
 #img-vini {
   height: 300px;
   width: 300px;
 }
 
 #img-cerebro {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+#btn-começar {
+  width: 260px;
+  height: 60px;
+  font-size: 22px;
+  align-items: center;
+  margin: -33px;
+  position: absolute;
+  margin-left: -138px;
+}
+
+.container {
+  z-index: 9999;
 }
 
 .titulo {

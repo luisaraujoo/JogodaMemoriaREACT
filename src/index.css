@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0d0d20;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,7 +14,6 @@
 }
 
 body {
-  background-color: #242424;
   margin: 0;
   display: flex;
   place-items: center;
@@ -73,5 +72,11 @@ button:focus-visible {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }

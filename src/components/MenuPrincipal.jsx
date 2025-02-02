@@ -5,25 +5,17 @@ const MenuPrincipal = ({ onClick }) => {
   return (
     <div className="container">
       <div className="titulo">
-        <img id="img-cerebro" src="/1.svg" alt="cerebro1" />
+        <img id="img-cerebro" src="/1.svg" alt="imagem cerebro" />
+
         <h1>Jogo da Memória</h1>
 
         <h3>
           <span>modo</span> Real Madrid
         </h3>
-        <p>by luis</p>
+        <p>by Luis</p>
+
         <figure>
-          <a
-            href="https://www.youtube.com/watch?v=6GunwSUdQVc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              id="img-vini"
-              src="/menuPrincipal/vini.svg"
-              alt="Vini Junior"
-            />
-          </a>
+          <img id="img-vini" src="/menuPrincipal/vini.svg" alt="Vini Junior" />
         </figure>
       </div>
       <div className="button">

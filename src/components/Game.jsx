@@ -3,16 +3,21 @@ import "./Game.css";
 
 const Game = () => {
   //   states de cartas
+
   const [viradas, setViradas] = useState([]);
   const [paresEncontrados, setParesEncontrados] = useState([]);
   const [cartasRandom, setCartasRandom] = useState([]);
   const btnEmbaralhar = useRef(null);
+
   // states de pontuação
+
   const [jogador1, setJogador1] = useState(0);
   const [jogador2, setJogador2] = useState(0);
   const [jogadorAtual, setJogadorAtual] = useState(1);
   const playerVezRef = useRef(null);
+
   //   states game over
+
   const refGameOver = useRef(null);
   const [ganhador, setGanhador] = useState("");
   const [perdedor, setPerdedor] = useState("");
@@ -33,6 +38,7 @@ const Game = () => {
   ];
 
   // função para embaralhar cartas
+
   const embaralhar = () => {
     const jogadoresDuplicados = [...jogadores, ...jogadores];
     const jogadoresEmbaralhados = jogadoresDuplicados.sort(
@@ -61,6 +67,7 @@ const Game = () => {
   };
 
   // função alternar jogador
+
   const alternarJogador = () => {
     setJogadorAtual((prev) => (prev === 1 ? 2 : 1));
   };
@@ -121,6 +128,7 @@ const Game = () => {
   }, [viradas, cartasRandom, jogadorAtual]);
 
   // botoes de end
+
   const menuPrincipal = () => {
     window.location.reload();
   };
@@ -188,10 +196,10 @@ const Game = () => {
             >
               <div className="inner">
                 <div className="frente">
-                  <img src={jogador.img} alt="imagem dos jogadores" />
+                  <img src={jogador.img} alt="imagem do jogador" />
                 </div>
                 <div className="atras">
-                  <img src="/jogadores/logocapareal.svg" alt="" />
+                  <img src="/jogadores/logocapareal.svg" alt="capa da carta" />
                 </div>
               </div>
             </div>
